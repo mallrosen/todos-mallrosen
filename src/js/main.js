@@ -15,10 +15,10 @@ if (localStorage.getItem("todoList")) {
 
 const task1 = new Tasks("Tvätta", true);
 const task2 = new Tasks("Städa", false);
-const task3 = new Tasks("Handla mat", false);
+const task3 = new Tasks("Handla mat", false)
 const task4 = new Tasks("Plugga", false);
 
-const todoList = [task1, task2, task3, task4];
+let todoList = [task1, task2, task3, task4];
 const createHtml = () => {
 const toDosContainer = document.getElementById("toDoContainer");
 toDosContainer.innerHTML = "";
@@ -48,8 +48,24 @@ for (let i = 0; i < todoList.length; i++) {
     taskH2.innerHTML = todoList[i].title;
     checkbox.innerHTML = todoList[i].isDone;
     taskLi.className = "toDoLi";
-
 }
+
 }
 
 createHtml();
+
+
+
+
+// const footer = document.createElement("footer");
+// const fDiv = document.createElement("div");
+// const fA = document.createElement("a");
+// const fP = document.createElement("p");
+// document.body.appendChild(footer);
+
+// footer.appendChild(fDiv);
+// fDiv.appendChild(fA);
+// fA.appendChild(fP);
+
+// fP.innerHTML = "&copy;FED23S-2023";
+

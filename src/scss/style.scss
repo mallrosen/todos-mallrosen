@@ -1,5 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -15,4 +22,13 @@ h2{
   margin: 50px;
   padding: 10px;
 
+}
+
+header{
+
+
+}
+
+footer{
+  background-color: aqua;
 }
