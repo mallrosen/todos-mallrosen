@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,30 +7,64 @@
 }
 
 body{
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows:4;
+  grid-template-columns: 1;
   min-height: 100vh;
-  background-color: beige;
-}
+  justify-content: center;
+  font-family: 'Sometype Mono', monospace;
 
-h2{
-  display: inline;
-  padding-right: 15px;
-}
-
-.toDoLi {
-  margin: 50px;
-  padding: 10px;
 
 }
 
 header{
+  min-width: 100vw;
+  display: grid;
+  grid-row-start: 1;
+  justify-content: center;
+  align-items: center;
+}
 
-
+.textBox{
+  display: grid;
+  grid-template-rows: 3;
+  max-width: 25vh;
 }
 
 footer{
-  background-color: aqua;
+  display: grid;
+  grid-row: 4;
+  justify-content: end;
+  align-items: center;
+}
+
+#app{
+  display: grid;
+  grid-row-start: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 25vw;
+  min-height: 50vh;
+  background-color: antiquewhite;
+}
+
+.toDoLi{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  padding: 15px;
+
+}
+
+.input-task{
+  display: flex;
+  justify-content: center;
+  grid-row-start: 3;
+  height: 20px;
 }
