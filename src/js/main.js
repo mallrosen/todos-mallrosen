@@ -40,10 +40,11 @@ for (let i = 0; i < todoList.length; i++){
     checkbox.type = "checkbox";
     checkbox.checked = todoList[i].isDone;
 
-    checkbox.addEventListener("click", () => {  
+    checkbox.addEventListener("click", () => { 
         todoList[i].isDone = true;
-        console.log(todoList[i].isDone);
-        createHtml();
+  /*       console.log(todoList[i].isDone); */
+        createHtml(); 
+  
     })
 
     taskUl.appendChild(taskLi);
@@ -59,23 +60,29 @@ for (let i = 0; i < todoList.length; i++){
 
 createHtml();
 
-
 const addTaskContainer = document.createElement("div")
 addTaskContainer.className = "input-task";
-const taskBtn = document.createElement("button");
 
+const taskBtn = document.createElement("button");
 taskBtn.innerHTML = "Lägg till!"
 
 const textBox = document.createElement("input");
-
 textBox.setAttribute("type", "textarea");
 textBox.className = "textBox";
 
+textBox.placeholder = "Skriv in en ny uppgift:";
+
 addTaskContainer.appendChild(textBox);
 addTaskContainer.appendChild(taskBtn);
-
 document.body.appendChild(addTaskContainer);
 
+taskBtn.addEventListener("click", () => {
+    let itemText = textBox.value;
+    const task = new Tasks(itemText, false);
+    todoList.push (task);
+    console.log(todoList);
+    createHtml();
+})
 
 
 const footer = document.createElement("footer");
