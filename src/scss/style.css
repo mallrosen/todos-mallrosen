@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 4;
+  grid-template-columns: 1;
+  min-height: 100vh;
+  justify-content: center;
+  font-family: "Sometype Mono", monospace;
+  background-color: azure;
+}
+
+header {
+  min-width: 100vw;
+  display: grid;
+  grid-row-start: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.textBox {
+  display: grid;
+  grid-template-rows: 3;
+  max-width: 25vh;
+}
+
+footer {
+  display: grid;
+  grid-row: 4;
+  justify-content: end;
+  align-items: center;
+}
+
+#app {
+  display: grid;
+  grid-row-start: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 25vw;
+  min-height: 50vh;
+  margin: 20px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
+.toDoLi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.input-task {
+  display: flex;
+  justify-content: center;
+  grid-row-start: 3;
+  height: 30px;
+  gap: 20px;
+}
+
+button {
+  background-color: antiquewhite;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: "Sometype Mono", monospace;
+}
+
+.textBox {
+  font-family: "Sometype Mono", monospace;
+  min-width: 15vw;
+}/*# sourceMappingURL=style.css.map */

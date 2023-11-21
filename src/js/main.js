@@ -80,10 +80,11 @@ taskBtn.addEventListener("click", () => {
     let itemText = textBox.value;
     const task = new Tasks(itemText, false);
     todoList.push (task);
-    console.log(todoList);
+/*     console.log(todoList); */
+    let textInput = document.getElementById("textBox");
+    textBox.value = "";
     createHtml();
 })
-
 
 const footer = document.createElement("footer");
 const fP = document.createElement("p");
