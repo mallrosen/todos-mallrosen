@@ -9,9 +9,7 @@ const headerh1 = document.createElement("h1");
 header.appendChild(headerh1);
 headerh1.innerHTML = "TO DO-LIST"
 
-if (localStorage.getItem("todoList")) {
-    todoList = JSON.parse(localStorage.getItem("todoList"));
-   }
+
 
 const task1 = new Tasks("Tvätta", false);
 const task2 = new Tasks("Städa", false);
@@ -28,6 +26,10 @@ const taskUl = document.createElement("ul");
 appContainer.appendChild(taskUl);    
 taskUl.className = "todo";
 
+/* if (localStorage.getItem("todoList")) {
+    todoList = JSON.parse(localStorage.getItem("todoList"));
+   }
+ */
 
 localStorage.setItem("todoTasks", JSON.stringify(todoList))
 
@@ -81,7 +83,6 @@ taskBtn.addEventListener("click", () => {
     const task = new Tasks(itemText, false);
     todoList.push (task);
 /*     console.log(todoList); */
-    let textInput = document.getElementById("textBox");
     textBox.value = "";
     createHtml();
 })

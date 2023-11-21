@@ -24,33 +24,29 @@ header{
   grid-row-start: 1;
   justify-content: center;
   align-items: center;
+  text-decoration: underline;
+  font-size: 1.5rem;
 }
 
-.textBox{
-  display: grid;
-  grid-template-rows: 3;
-  max-width: 25vh;
-}
-
-footer{
-  display: grid;
-  grid-row: 4;
-  justify-content: end;
-  align-items: center;
-}
 
 #app{
-  display: grid;
-  grid-row-start: 2;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
+footer{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+
 .todo{
   border: 1px solid black;
   border-radius: 10px;
-  width: 25vw;
-  min-height: 50vh;
+  min-width: 35vw;
+  min-height: 40vh;
   margin: 20px;
   display: grid;
   justify-content: center;
@@ -71,7 +67,6 @@ footer{
 .input-task{
   display: flex;
   justify-content: center;
-  grid-row-start: 3;
   height: 30px;
   gap: 20px;
 }
@@ -87,5 +82,24 @@ button{
 
 .textBox {
   font-family: 'Sometype Mono', monospace;
-  min-width: 15vw;
+  min-width: 25vw;
 }
+
+
+
+@media screen and (max-width: 1024px){
+  .todo{
+    min-width: 45vw;
+  }
+}
+
+
+@media screen and (max-width: 760px){
+  .todo{
+    min-width: 80vw;
+  }
+  .textBox{
+    min-width: 60vw;
+  }
+}
+
