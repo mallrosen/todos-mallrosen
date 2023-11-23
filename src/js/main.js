@@ -25,21 +25,21 @@ else {
    }  
 
    
-   const sortBtn = document.createElement("button");
-   sortBtn.innerHTML = "Sortera A-Ö";
-   sortBtn.className = "sortBtn taskBtn";
+const sortBtn = document.createElement("button");
+sortBtn.innerHTML = "Sortera A-Ö";
+sortBtn.className = "sortBtn taskBtn";
 
-   sortBtn.addEventListener("click", mySortFunction);
+sortBtn.addEventListener("click", mySortFunction);
 
-   function mySortFunction(){
-    todoList.sort(function(a, b){
-      let x = a.title.toLowerCase();
-      let y = b.title.toLowerCase();
-      if (x < y) {return -1;}
-      if (x > y) {return 1;}
-      return 0;
-    });
-    createHtml();
+function mySortFunction(){
+todoList.sort(function(a, b){
+    let x = a.title.toLowerCase();
+    let y = b.title.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+});
+createHtml();
 }
 
 const sortBtn2 = document.createElement("button");
@@ -60,8 +60,8 @@ sortBox.appendChild(sortBtn);
 sortBox.appendChild(sortBtn2);
 document.body.appendChild(sortBox);
    
-const createHtml = () => {
 
+const createHtml = () => {
 localStorage.setItem("todoTasks", JSON.stringify(todoList)); 
 
 const appContainer = document.getElementById("app");
@@ -88,7 +88,7 @@ for (let i = 0; i < todoList.length; i++){
 
     taskH2.innerHTML = todoList[i].title;
     checkbox.innerHTML = todoList[i].isDone;
-    removeBth.className = "bi bi-trash3 removeBtn";
+    removeBth.className = "bi bi-trash3";
     taskLi.className = "toDoLi";
 
     removeBth.addEventListener("click", () => {
@@ -113,7 +113,6 @@ for (let i = 0; i < todoList.length; i++){
 if (todoList[i].isDone === true){
     taskH2.className = "line";
 }}}
-
 createHtml();
 
 
@@ -138,7 +137,6 @@ taskBtn.addEventListener("click", () => {
     let itemText = textBox.value;
     const task = new Tasks(itemText, false);
     todoList.push (task);
-/*     console.log(todoList); */
     textBox.value = "";
     createHtml();
 })
