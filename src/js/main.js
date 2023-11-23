@@ -24,11 +24,11 @@ else {
    todoList = JSON.parse(localStorage.getItem("todoTasks"));
    }  
 
+   
    const sortBtn = document.createElement("button");
    sortBtn.innerHTML = "Sortera A-Ö";
-   sortBtn.className = "sortBtn";
-   document.body.appendChild(sortBtn);
-   
+   sortBtn.className = "sortBtn taskBtn";
+
    sortBtn.addEventListener("click", mySortFunction);
 
    function mySortFunction(){
@@ -41,9 +41,27 @@ else {
     });
     createHtml();
 }
-   
 
+const sortBtn2 = document.createElement("button");
+sortBtn2.innerHTML = "Sortera avklarade";
+sortBtn2.className = "sortBtn2 taskBtn";
+
+sortBtn2.addEventListener("click", mySortFunction2);
+
+function mySortFunction2(){
+const falseFirst = todoList.sort((a, b) => Number(a.isDone) - Number(b.isDone));
+
+ createHtml();
+}
+
+const sortBox = document.createElement("div");
+sortBox.className = "sortBox";
+sortBox.appendChild(sortBtn);
+sortBox.appendChild(sortBtn2);
+document.body.appendChild(sortBox);
+   
 const createHtml = () => {
+
 localStorage.setItem("todoTasks", JSON.stringify(todoList)); 
 
 const appContainer = document.getElementById("app");
@@ -70,12 +88,15 @@ for (let i = 0; i < todoList.length; i++){
 
     taskH2.innerHTML = todoList[i].title;
     checkbox.innerHTML = todoList[i].isDone;
-    removeBth.className = "bi bi-trash3";
+    removeBth.className = "bi bi-trash3 removeBtn";
     taskLi.className = "toDoLi";
 
     removeBth.addEventListener("click", () => {
+        if (confirm("Är du säker på att du vill radera din to-do?") == true) {
         todoList.splice(i, 1);
+        }
         createHtml();
+
     })
 
     checkbox.addEventListener("click", () => { 
@@ -88,15 +109,10 @@ for (let i = 0; i < todoList.length; i++){
             createHtml();
             }
     })
-
-
-    
+   
 if (todoList[i].isDone === true){
     taskH2.className = "line";
-
-}
-}
-}
+}}}
 
 createHtml();
 
@@ -130,9 +146,7 @@ taskBtn.addEventListener("click", () => {
 const footer = document.createElement("footer");
 const fP = document.createElement("p");
 document.body.appendChild(footer);
-
 footer.appendChild(fP);
-
 fP.innerHTML = "&copy;FED23S-2023";
 
  

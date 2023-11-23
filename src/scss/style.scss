@@ -8,8 +8,6 @@
 
 body{
   display: grid;
-  grid-template-rows:5;
-  grid-template-columns: 1;
   min-height: 100vh;
   font-family: 'Sometype Mono', monospace;
   background-color: azure;
@@ -25,35 +23,36 @@ header{
   font-size: 1.5rem;
 }
 
-.sortBtn{
-  display: grid;
-  grid-row-start: 2;
+
+.sortBox{
+  display: flex;
   margin: auto;
-  padding: 10px;
-  align-items: center;
+  gap: 10vw;
+  padding: 7px;
+}
+
+.sortBtn, .sortBtn2{
+  padding: 7px;
 }
 
 #app{
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-
 footer{
-  display: grid;
+  display: flex;
   justify-content: end;
   align-items: center;
 }
 
 .todo{
+  display: grid;
   border: 1px solid black;
   border-radius: 10px;
+  padding: 10px;
   min-width: 35vw;
   min-height: 40vh;
-  margin: 20px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
   background-color: antiquewhite;
 }
 
@@ -62,8 +61,6 @@ footer{
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 15px;
-  padding: 15px;
 }
 
 .input-task{
@@ -107,3 +104,4 @@ footer{
 .line{
   text-decoration: line-through;
 }
+
