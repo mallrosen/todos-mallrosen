@@ -1,6 +1,9 @@
 import "./../scss/style.scss";
 import { Tasks } from "./models/Tasks";
 
+export default defineConfig({
+    base: '/<https://mallrosen.github.io/todos-mallrosen/>/',
+})
 
 const header = document.createElement("header");
 document.body.appendChild(header);
